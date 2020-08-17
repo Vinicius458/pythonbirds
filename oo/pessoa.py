@@ -9,7 +9,7 @@ class Pessoa:
 
 if __name__ == '__main__':
     vinicius = Pessoa(nome='Vinicius')
-    jeferson=Pessoa(vinicius,nome='Jeferson')
+    jeferson=Pessoa(vinicius, nome='Jeferson')
     print(Pessoa.cumprimentar(jeferson))
     print(id(jeferson))
     print(jeferson.cumprimentar())
@@ -18,3 +18,7 @@ if __name__ == '__main__':
 
 for filho in jeferson.filhos:
     print(filho.nome)
+    jeferson.sobrenome='Padua'
+    del jeferson.filhos
+    print(jeferson.__dict__)
+    print(vinicius.__dict__)
