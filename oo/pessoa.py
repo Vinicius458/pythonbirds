@@ -6,7 +6,13 @@ class Pessoa:
         self.filhos=list(filhos)
     def cumprimentar(self):
         return f'Olá {id(self)}'
+    @staticmethod
+    def metodo_estatico():
+       return 42
 
+    @classmethod
+    def nome_e_atributos_de_classe(cls):
+        return f'{cls} - olhos {cls.olhos}'
 
 if __name__ == '__main__':
     vinicius = Pessoa(nome='Vinicius')
@@ -31,3 +37,5 @@ for filho in jeferson.filhos:
     print(jeferson.olhos)
     print(vinicius.olhos)
     print(id(Pessoa.olhos), id(jeferson.olhos), id(vinicius.olhos))
+    print(Pessoa.metodo_estatico(), jeferson.metodo_estatico())
+    print(Pessoa.nome_e_atributos_de_classe(), jeferson.nome_e_atributos_de_classe())
